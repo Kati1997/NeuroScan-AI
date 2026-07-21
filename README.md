@@ -1,234 +1,294 @@
-# AI-Powered Brain Tumor Detection and Medical Decision Support System
+# 🧠 NeuroScan AI
 
-A full-stack web application for medical image processing and brain tumor detection using Deep Learning, Computer Vision, and Explainable AI (Grad-CAM).
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Flask](https://img.shields.io/badge/Flask-3.0-green)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16-orange)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple)
+### AI-Powered Multi-Modal Medical Imaging Platform
 
-## Features
+**Brain MRI Tumor Detection • Chest X-Ray Pneumonia Detection • Explainable AI • Medical Reporting**
 
-- **Secure Authentication** — Doctor/Admin registration, login, password hashing, session management
-- **Deep Learning Models** — Custom CNN, ResNet50, MobileNetV2 with automatic best-model selection
-- **MRI Analysis** — Upload, preview, and analyze brain MRI scans
-- **Explainable AI** — Grad-CAM heatmap visualizations
-- **PDF Reports** — Automatic hospital-style medical report generation
-- **Analytics Dashboard** — Chart.js powered real-time statistics
-- **REST API** — Full JSON API with validation and documentation
-- **Docker Deployment** — One-command deployment with docker-compose
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![Flask](https://img.shields.io/badge/Flask-3.0-black?style=for-the-badge&logo=flask)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16-FF6F00?style=for-the-badge&logo=tensorflow)
+![Keras](https://img.shields.io/badge/Keras-DeepLearning-D00000?style=for-the-badge&logo=keras)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)
+![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
-## Project Structure
+---
 
-```
-BrainTumorDetectionAI/
-├── app.py                  # Main Flask application
-├── api.py                  # REST API endpoints
-├── database.py             # SQLite database operations
-├── train_model.py          # Train all 3 DL models
-├── compare_models.py       # Model comparison utilities
-├── predict.py              # Prediction + Grad-CAM + PDF reports
-├── create_demo_model.py    # Quick demo model for testing
-├── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
-├── models/                 # Trained model files
-├── uploads/                # Uploaded MRI images
-├── reports/                # Generated PDF reports
-├── static/                 # CSS, JS, Grad-CAM images
-├── templates/              # HTML templates
-└── database/               # SQLite DB + schema
-```
+*A modern AI-powered clinical decision support platform combining Deep Learning, Explainable AI, Medical Image Processing and Interactive Analytics for Brain MRI Tumor Detection and Chest X-Ray Pneumonia Detection.*
 
-## Quick Start
+**GitHub Repository**
 
-### 1. Clone and Setup
+https://github.com/Kati1997/NeuroScan-AI
 
-```bash
-git clone <your-repo-url>
-cd BrainTumorDetectionAI
+</div>
 
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# Linux/Mac
-source venv/bin/activate
+---
 
-pip install -r requirements.txt
-```
+# 📑 Table of Contents
 
-### 2. Environment Configuration
+- Project Overview
+- Features
+- System Workflow
+- Platform Architecture
+- Technologies
+- Deep Learning Models
+- Explainable AI
+- Performance
+- Screenshots
+- Installation
+- Docker Deployment
+- REST API
+- Project Structure
+- Security
+- Academic Collaboration
+- Contributors
+- Future Improvements
+- License
 
-```bash
-cp .env.example .env
-# Edit .env and set FLASK_SECRET_KEY to a random string
-```
+---
 
-### 3. Create Demo Model (Quick Test)
+# 🏥 Project Overview
 
-For immediate testing without the Kaggle dataset:
+NeuroScan AI is an AI-powered medical imaging platform designed to assist healthcare professionals in the analysis of Brain MRI and Chest X-Ray images using state-of-the-art Deep Learning models.
 
-```bash
-python create_demo_model.py
-```
+The platform combines medical image classification, explainable artificial intelligence (Grad-CAM), automated PDF report generation, clinical analytics, secure authentication, and RESTful APIs into a single web application.
 
-### 4. Train with Real Dataset (Recommended)
+Unlike traditional image classification demos, NeuroScan AI provides a complete workflow that resembles a real clinical environment, including:
 
-Download the [Brain MRI dataset from Kaggle](https://www.kaggle.com/code/mahmoudmagdyelnahal/brain-mri-images-for-brain-tumor-detection) and organize as:
+- Doctor authentication
+- Secure patient image upload
+- AI-assisted diagnosis
+- Explainable AI visualization
+- Prediction history
+- Medical PDF reports
+- Performance analytics
+- Model comparison dashboard
 
-```
-dataset/
-├── no_tumor/
-│   └── *.jpg
-└── tumor/
-    └── *.jpg
-```
+The system was developed for academic research purposes while following software engineering practices used in real-world AI healthcare applications.
 
-Then train all models:
+---
 
-```bash
-python train_model.py --data-dir dataset
-python compare_models.py
-```
+# ✨ Key Features
 
-### 5. Run the Application
+## 🧠 Brain MRI Analysis
 
-```bash
-python app.py
-```
+- Brain tumor detection
+- Multiple Deep Learning architectures
+- Automatic best-model selection
+- Confidence score calculation
+- Grad-CAM visualization
+- Prediction history
+- PDF medical report generation
 
-Open **http://localhost:5000** in your browser.
+---
 
-**Default Admin Account:**
-- Email: `admin@hospital.com`
-- Password: `Admin@123`
+## 🫁 Chest X-Ray Analysis
 
-## Docker Deployment
+- Pneumonia detection
+- Fine-tuned MobileNetV2
+- AI confidence estimation
+- Explainable AI heatmaps
+- Medical report generation
+- Historical predictions
 
-### One-Command Deployment
+---
 
-```bash
-docker-compose up --build
-```
+## 🔒 Secure Authentication
 
-Access at **http://localhost:5000**
-
-### Build Manually
-
-```bash
-docker build -t brain-tumor-detection .
-docker run -p 5000:5000 -e FLASK_SECRET_KEY=your-secret brain-tumor-detection
-```
-
-## Deploy to Render
-
-1. Push your code to GitHub
-2. Go to [render.com](https://render.com) → New → Web Service
-3. Connect your repository
-4. Configure:
-   - **Build Command:** `pip install -r requirements.txt && python create_demo_model.py`
-   - **Start Command:** `gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120 app:app`
-   - **Environment Variables:**
-     - `FLASK_SECRET_KEY` = (generate a random string)
-     - `FLASK_ENV` = `production`
-5. Add a **Persistent Disk** mounted at `/app/database`, `/app/uploads`, `/app/reports`, `/app/models`
-6. Deploy
-
-## Deploy to Railway
-
-1. Push your code to GitHub
-2. Go to [railway.app](https://railway.app) → New Project → Deploy from GitHub
-3. Railway auto-detects the Dockerfile
-4. Set environment variables:
-   - `FLASK_SECRET_KEY`
-   - `FLASK_ENV=production`
-   - `PORT` (Railway sets this automatically)
-5. Add volumes for persistent storage (database, uploads, reports, models)
-6. Deploy
-
-## REST API Documentation
-
-Base URL: `/api`
-
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|-------------|
-| POST | `/api/register` | No | Register new doctor |
-| POST | `/api/login` | No | Authenticate user |
-| POST | `/api/logout` | Yes | End session |
-| POST | `/api/upload` | Yes | Upload MRI image |
-| POST | `/api/predict` | Yes | Analyze MRI + generate report |
-| GET | `/api/predictions` | Yes | List prediction history |
-| GET | `/api/reports` | Yes | List PDF reports |
-| GET | `/api/dashboard` | Yes | Analytics data |
-| GET | `/api/docs` | No | API documentation |
-
-### Example: Login
-
-```bash
-curl -X POST http://localhost:5000/api/login \
-  -H "Content-Type: application/json" \
-  -d '{"email": "admin@hospital.com", "password": "Admin@123"}'
-```
-
-### Example: Predict
-
-```bash
-curl -X POST http://localhost:5000/api/predict \
-  -b cookies.txt \
-  -F "file=@mri_scan.jpg"
-```
-
-## Database Schema
-
-See `database/schema.sql` for the full SQL schema.
-
-**Tables:**
-- `users` — Doctor/Admin accounts
-- `predictions` — MRI analysis results
-- `reports` — Generated PDF report references
-
-## Model Training Details
-
-Three models are trained and compared:
-
-| Model | Type | Key Features |
-|-------|------|-------------|
-| Custom CNN | From Scratch | 4 conv layers, batch norm, dropout |
-| ResNet50 | Transfer Learning | ImageNet pre-trained, fine-tuned head |
-| MobileNetV2 | Transfer Learning | Lightweight, fast inference |
-
-**Evaluation Metrics:** Accuracy, Precision, Recall, F1 Score, ROC/AUC, Confusion Matrix
-
-The best model (by F1 Score) is automatically saved as `models/best_model.keras`.
-
-## Security Features
-
-- Password hashing (Werkzeug)
-- CSRF protection (Flask-WTF)
-- SQL injection protection (parameterized queries)
-- Secure file upload validation
-- File size limits (10MB default)
-- HTTP-only session cookies
+- Doctor registration
+- Login system
+- Password hashing
+- Session management
 - Role-based access control
 
-## Pages
+---
 
-| Page | URL | Access |
-|------|-----|--------|
-| Home | `/` | Public |
-| About | `/about` | Public |
-| Login | `/login` | Public |
-| Register | `/register` | Public |
-| Dashboard | `/dashboard` | Authenticated |
-| Upload MRI | `/upload` | Authenticated |
-| Predictions | `/predictions` | Authenticated |
-| Reports | `/reports` | Authenticated |
-| Model Comparison | `/model-comparison` | Authenticated |
+## 📊 Analytics Dashboard
 
-## Medical Disclaimer
+The platform includes an interactive dashboard showing:
 
-This system is designed for **educational and research purposes** as a university final project and portfolio piece. It should **not** be used as the sole basis for clinical diagnosis. Always consult qualified medical professionals for medical decisions.
+- Total analyses
+- MRI analyses
+- Chest X-Ray analyses
+- Tumor statistics
+- Pneumonia statistics
+- Healthy cases
+- Confusion matrices
+- Accuracy metrics
+- Precision
+- Recall
+- F1 Score
+- ROC AUC
+- Daily analytics
+- Monthly analytics
 
-## License
+---
 
-MIT License — Free for educational and research use.
+## 📄 Medical Reporting
+
+Automatic PDF reports include:
+
+- Diagnosis
+- Confidence score
+- Scan information
+- Model used
+- Date and time
+- Doctor information
+- Explainable AI visualization
+
+---
+
+## 🤖 Explainable AI
+
+The platform integrates Grad-CAM visualizations allowing users to understand which image regions contributed most to the AI prediction.
+
+This increases model transparency and improves trust in AI-assisted medical diagnosis.
+
+---
+
+## 🌐 REST API
+
+RESTful JSON API supporting:
+
+- Authentication
+- Predictions
+- Dashboard statistics
+- Reports
+- History
+- Model information
+
+---
+
+## 🐳 Docker Support
+
+The entire application can be deployed using Docker and Docker Compose with minimal configuration.
+
+---
+
+# ⚙️ System Workflow
+
+```text
+Doctor Login
+      │
+      ▼
+Authentication
+      │
+      ▼
+Select Scan Type
+      │
+      ├─────────────┐
+      ▼             ▼
+ Brain MRI      Chest X-Ray
+      │             │
+      ▼             ▼
+ Upload Image
+      │
+      ▼
+ Image Preprocessing
+      │
+      ▼
+ Deep Learning Prediction
+      │
+      ▼
+ Confidence Calculation
+      │
+      ▼
+ Grad-CAM Generation
+      │
+      ▼
+ Medical Diagnosis
+      │
+      ▼
+ Save Prediction
+      │
+      ▼
+ Generate PDF Report
+      │
+      ▼
+ Analytics Dashboard
+```
+
+---
+
+# 🏗️ Platform Architecture
+
+```text
+                     User
+                      │
+                      ▼
+             Flask Web Application
+                      │
+      ┌───────────────┼────────────────┐
+      ▼               ▼                ▼
+ Authentication   Deep Learning     REST API
+      │               │                │
+      ▼               ▼                ▼
+ SQLite DB      TensorFlow Models   JSON Services
+      │               │
+      ▼               ▼
+ Prediction History
+      │
+      ▼
+ PDF Reports
+      │
+      ▼
+ Analytics Dashboard
+```
+
+---
+
+# 💻 Technologies
+
+| Category | Technologies |
+|-----------|--------------|
+| Backend | Flask, Python |
+| Frontend | HTML5, CSS3, JavaScript, Bootstrap |
+| AI Framework | TensorFlow, Keras |
+| Database | SQLite |
+| Computer Vision | OpenCV |
+| Explainable AI | Grad-CAM |
+| Charts | Chart.js |
+| Reports | ReportLab |
+| Deployment | Docker |
+| API | REST JSON |
+
+---
+
+# 🧠 Deep Learning Models
+
+The platform supports multiple Deep Learning architectures for medical image classification.
+
+## Brain MRI
+
+- Custom CNN
+- ResNet50
+- MobileNetV2
+
+The application automatically compares the trained models and selects the best-performing model based on evaluation metrics.
+
+---
+
+## Chest X-Ray
+
+- MobileNetV2 (Fine-Tuned)
+
+Optimized for binary classification:
+
+- Normal
+- Pneumonia
+
+---
+
+The AI pipeline automatically performs:
+
+- Image preprocessing
+- Normalization
+- Prediction
+- Confidence estimation
+- Grad-CAM generation
+- Report generation
+
+---
