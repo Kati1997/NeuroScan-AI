@@ -292,3 +292,287 @@ The AI pipeline automatically performs:
 - Report generation
 
 ---
+# 🔥 Explainable AI
+
+NeuroScan AI integrates **Gradient-weighted Class Activation Mapping (Grad-CAM)** to provide visual explanations for every AI prediction.
+
+Instead of only returning a predicted class, the platform highlights the regions of the medical image that most influenced the model's decision.
+
+Benefits include:
+
+- Improved transparency
+- Better clinical interpretability
+- Increased trust in AI predictions
+- Visual validation for healthcare professionals
+
+Grad-CAM visualizations are generated automatically for both Brain MRI and Chest X-Ray analyses and are included in the generated medical reports.
+----
+# 📈 Model Performance
+
+## Brain MRI (Best Model)
+
+| Metric | Score |
+|--------|-------:|
+| Accuracy | 97.8% |
+| Precision | 98.9% |
+| Recall | 98.2% |
+| F1 Score | 98.5% |
+| ROC AUC | 99.0% |
+
+---
+
+## Chest X-Ray
+
+| Metric | Score |
+|--------|-------:|
+| Accuracy | 96.0% |
+| Precision | 96.9% |
+| Recall | 97.7% |
+| F1 Score | 97.3% |
+| ROC AUC | 99.1% |
+
+------
+
+# 📸 Application Screenshots
+
+## 🏠 Home Page
+
+Modern landing page presenting both AI diagnostic modules.
+
+![Home](screenshots/home.png)
+
+---
+
+## 🔐 Doctor Authentication
+
+Secure login system for medical professionals.
+
+![Login](screenshots/login.png)
+
+---
+
+Doctor registration interface.
+
+![Register](screenshots/register.png)
+
+---
+
+## 📊 Analytics Dashboard
+
+Real-time platform statistics.
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+Performance metrics and clinical analytics.
+
+![Dashboard](screenshots/dashboard1.png)
+
+---
+
+Detailed charts and confusion matrices.
+
+![Dashboard Analytics](screenshots/dashboard2.png)
+
+---
+
+## 🧠 Brain MRI Analysis
+
+Image upload interface.
+
+![MRI Upload](screenshots/mriupload.png)
+
+---
+
+AI prediction with Grad-CAM visualization.
+
+![MRI Result](screenshots/mriresult.png)
+
+---
+
+## 🫁 Chest X-Ray Analysis
+
+Upload interface.
+
+![X-Ray Upload](screenshots/xrayupload.png)
+
+---
+
+Prediction with Explainable AI.
+
+![X-Ray Result](screenshots/xrayresult.png)
+
+---
+
+## 📋 Prediction History
+
+History of previous AI analyses.
+
+![History](screenshots/history.png)
+
+---
+
+## 📄 Medical Reports
+
+Automatically generated PDF reports.
+
+![Reports](screenshots/medical.reports.png)
+
+------
+# ⚙️ Installation
+
+Clone repository
+
+```bash
+git clone https://github.com/Kati1997/NeuroScan-AI.git
+```
+
+Move to project
+
+```bash
+cd NeuroScan-AI
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run application
+
+```bash
+python app.py
+```
+# 🐳 Docker Deployment
+
+Build Docker image
+
+```bash
+docker-compose build
+```
+
+Start containers
+
+```bash
+docker-compose up
+```
+
+The application will be available at:
+
+```
+http://localhost:5000
+```
+
+# 🌐 REST API
+
+Main endpoints include:
+
+| Endpoint | Description |
+|-----------|-------------|
+| POST /api/predict | AI Prediction |
+| GET /dashboard | Dashboard Statistics |
+| GET /reports | Medical Reports |
+| GET /history | Prediction History |
+| GET /models | Available Models |
+
+-----
+
+# 📂 Project Structure
+
+```
+NeuroScan-AI
+│
+├── database/
+├── dataset/
+├── dataset_pneumonia/
+├── models/
+├── reports/
+├── screenshots/
+├── static/
+├── templates/
+├── uploads/
+│
+├── app.py
+├── api.py
+├── database.py
+├── predict.py
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+```
+
+# 🔒 Security
+
+The platform implements several security mechanisms:
+
+- Password hashing
+- Session management
+- Role-based authentication
+- Protected routes
+- Input validation
+- Secure file uploads
+
+- -----
+# 🎓 Academic Collaboration
+
+NeuroScan AI was developed as part of a collaborative Master's project focused on applying Artificial Intelligence to medical image analysis.
+
+The project combined software engineering, deep learning, medical imaging, explainable AI, and web application development into a complete clinical decision support prototype.
+
+----
+# 👥 Contributors
+
+### Lead Implementation
+
+**Katerina Koçi**
+
+Primary responsibilities included:
+
+- Software architecture
+- Backend development
+- Database implementation
+- AI model integration
+- Deep Learning implementation
+- Model training and evaluation
+- REST API development
+- Dashboard implementation
+- Testing and debugging
+- Documentation
+- GitHub repository management
+
+---
+
+### Academic Collaboration
+
+This project was completed collaboratively as part of a Master's course together with:
+
+- Romina Muraçi
+- Edgen Murati
+- Kevin Veipi
+- Albana Vrapi
+
+- ------
+
+# 🔮 Future Improvements
+
+Future development may include:
+
+- Multi-disease diagnosis
+- DICOM support
+- Cloud deployment
+- Electronic Health Record integration
+- Multi-language interface
+- Federated Learning
+- Large Language Model integration
+- Mobile application
+
+- -----
+
+# 📄 License
+
+This repository is published for educational and research purposes.
+
+© 2026 Katerina Koçi
